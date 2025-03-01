@@ -46,11 +46,11 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=123456
   zookeeper:
-    image: wurstmeister/zookeeper:3.4.6
+    image: wurstmeister/zookeeper #:3.4.6
     ports:
       - "2181:2181"
   kafka:
-    image: wurstmeister/kafka:2.12-2.2.1
+    image: wurstmeister/kafka #:2.12-2.2.1
     ports:
       - "9092:9092"
       - "9094:9094"
@@ -75,13 +75,13 @@ services:
     ports:
       - "9200:9200"
       - "9300:9300"
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
-      nofile:
-        soft: 65536
-        hard: 65536
+    #ulimits:
+    # memlock:
+    #    soft: -1
+    #    hard: -1
+    #  nofile:
+    #    soft: 65536
+    #    hard: 65536
   kibana:
     image: docker.elastic.co/kibana/kibana:7.6.0
     ports:
